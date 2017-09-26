@@ -1,0 +1,38 @@
+'''Given two strings that may or may not be of the same length, 
+determine the minimum number of character deletions required to make and anagrams. 
+Any characters can be deleted from either of the strings. 
+'''
+
+
+
+def number_needed(a, b):
+
+    result = 0
+    counter = 0
+    holder = []
+
+    for i in a:
+        A = a.count(i)
+        B = b.count(i)
+        if i not in holder:
+            if A >= B:
+                counter = A - B
+            elif B > A:
+                counter = B - A
+            result += counter
+            counter = 0
+            holder.append(i)
+
+    for i in b:
+        A = a.count(i)
+        B = b.count(i)
+        if i not in holder:
+            if A >= B:
+                counter = A - B
+            elif B > A:
+                counter = B - A
+            result += counter
+            counter = 0
+            holder.append(i)
+
+    return result
