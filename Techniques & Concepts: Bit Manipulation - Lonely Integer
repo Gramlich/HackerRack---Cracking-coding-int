@@ -1,0 +1,11 @@
+#Print the unique number that occurs only once in on a new line.
+
+
+
+def lonely_integer(a):
+
+    item = [str(i) for i in a]
+
+    for loner in item:
+        if item.count(loner) == 1:
+            return int(loner)
