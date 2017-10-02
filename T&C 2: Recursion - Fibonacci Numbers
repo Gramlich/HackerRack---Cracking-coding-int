@@ -1,0 +1,18 @@
+#Given n, complete the fibonacci function so it returns fibonacci(n).
+
+def fibonacci(n):
+
+    counter = 1
+    fib0 = 0
+    fib1 = 1
+    temp = None
+    while counter != n:
+        temp = fib1
+        fib1 = fib0 + fib1
+        fib0 = temp
+        counter += 1
+
+    return fib1
+
+n = int(input())
+print(fibonacci(n))
