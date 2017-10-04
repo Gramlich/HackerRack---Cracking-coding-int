@@ -1,0 +1,29 @@
+
+
+
+
+
+""" 
+Complete the function in your editor below, which has parameter: a pointer to the root of a binary tree. 
+It must return a boolean denoting whether or not the binary tree is a binary search tree.
+You may have to write one or more helper functions to complete this challenge.
+
+Node is defined as
+class node:
+    def __init__(self, data):
+        self.data = data
+        self.left = None
+        self.right = None
+"""
+
+
+
+import sys
+def check(root, min, max):
+    if root == None:
+        return True
+    if root.data <= min or root.data >= max:
+        return False
+    return check(root.left, min, root.data) and check(root.right, root.data, max)
+def checkBST(root):
+    return check(root, float('-inf'), float('inf'))
